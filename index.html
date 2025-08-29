@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hijri-Gregorian Date Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="converter-container">
+    <header class="converter-header">
+        <h1>Hijri-Gregorian Date Converter</h1>
+        <p>A simple tool to convert dates between calendars.</p>
+    </header>
+
+    <main>
+        <!-- Gregorian to Hijri Converter -->
+        <section class="converter-section">
+            <h2>Gregorian to Hijri</h2>
+            <div class="input-group">
+                <label for="gregorian-date">Select a Gregorian Date:</label>
+                <input type="date" id="gregorian-date">
+                <button id="gregorian-to-hijri-btn">Convert</button>
+            </div>
+            <div class="result" id="gregorian-to-hijri-result">
+                <p>Result will be shown here.</p>
+            </div>
+        </section>
+
+        <!-- Hijri to Gregorian Converter -->
+        <section class="converter-section">
+            <h2>Hijri to Gregorian</h2>
+            <div class="input-group-hijri">
+                <div class="field">
+                    <label for="hijri-day">Day</label>
+                    <input type="number" id="hijri-day" min="1" max="30" placeholder="DD">
+                </div>
+                <div class="field">
+                    <label for="hijri-month">Month</label>
+                    <select id="hijri-month">
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="hijri-year">Year</label>
+                    <input type="number" id="hijri-year" min="1" placeholder="YYYY">
+                </div>
+            </div>
+             <button id="hijri-to-gregorian-btn">Convert</button>
+            <div class="result" id="hijri-to-gregorian-result">
+                <p>Result will be shown here.</p>
+            </div>
+        </section>
+
+        <!-- Limitations Section -->
+        <section class="limitations-section">
+            <h2>Limitations and Accuracy</h2>
+            <p>
+                This converter uses a <strong>tabular (arithmetic) Islamic calendar</strong>. It does not rely on the physical sighting of the moon. Here are some key points to consider:
+            </p>
+            <ul>
+                <li><strong>Astronomical vs. Sighting:</strong> The calculated Hijri date is based on a fixed mathematical algorithm. It may differ by one to two days from the official date in your country, which is often determined by the actual sighting of the crescent moon. [1]</li>
+                <li><strong>Purpose:</strong> This tool is excellent for historical, administrative, and planning purposes where a predictable calendar is needed. [1] For determining the start of religious events like Ramadan or Eid, you should always refer to your local religious authorities.</li>
+                <li><strong>Accuracy Over Time:</strong> The algorithm maintains mathematical consistency for a very wide range of years. However, like any algorithmic calendar, it may slowly diverge from the actual lunar cycle over very long periods (e.g., one day over approximately 2500 years). [4, 6]</li>
+            </ul>
+        </section>
+    </main>
+</div>
+
+<!-- Load Scripts -->
+<script src="hijri_date.js"></script>
+<script src="converter.js"></script>
+
+</body>
+</html>
